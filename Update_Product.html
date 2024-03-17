@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Product</title>
+  </head>
+  <body>
+    <h1>Update Product</h1>
+    <form method="POST" action="{{ url_for('routes.Update_Product', id = product[0]) }}" onsubmit="return confirm('Are you sure you want to update this product?');">
+      <input type="text" name="name" placeholder="Product Name" value="{{ product[1] }}" required />
+      <input type="text" name="description" placeholder="Product Description" value="{{ product[2] }}" />
+      <input type="number" min="0" name="price" placeholder="Product Price" value="{{ product[3] }}" required />
+      <input type="number" min="0" name="quantity" placeholder="Quantity in Stock" value="{{ product[4] }}" required />
+      <input type="submit" value="Update" />
+    </form>
+  </body>
+  
+</html>

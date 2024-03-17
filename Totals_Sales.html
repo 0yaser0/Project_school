@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Total Sales Per Day</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+</head>
+<body>
+<div id="content">
+    <h1>Total Sales Per Day</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Total Sales</th>
+        </tr>
+        {% for date, total in Totals_Sales %}
+        <tr>
+            <td>{{ date }}</td>
+            <td>{{ total }} DH</td>
+        </tr>
+        {% endfor %}
+    </table>
+   </div>
+    <button id="download">Download PDF</button>
+
+<a href="/">Back to Product List</a>
+</body>
+  <script>
+        document.getElementById('download').addEventListener('click', function() {
+            var doc = new jsPDF();
+            doc.fromHTML(document.getElementById('content'), 15, 15, {
+                'width': 170
+            });
+            doc.save('report.pdf');
+        });
+    </script>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales_Product</title>
+</head>
+<body>
+    <h1>Sales_Product</h1>
+    <ul>
+        {% for sale in Sales_Product %}
+        <li>
+            Product ID: {{ sale[1] }} - Quantity Sold: {{ sale[2] }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Product List</a>
+</body>
+</html>
